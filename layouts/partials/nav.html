@@ -1,0 +1,33 @@
+<div id="bar">
+	<nav>
+		{{ $order := "asce" }}
+
+		{{ if eq $.Site.Language.Lang "en" }}
+			{{ $order = "desc" }}
+		{{ end }}
+
+		{{ range sort .Site.Menus.main "Name" $order }}
+			{{ if eq .Name $.Params.menu }}
+				<div class="selected">
+					<svg width="7" height="7" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  						<circle cx="50" cy="50" r="50"/>
+					</svg>
+					<a href="{{ .URL }}">{{ .Name }}</a>
+				</div>
+			{{ else }}
+				<div><a href="{{ .URL }}">{{ .Name }}</a></div>
+			{{ end }}
+		{{ end }}	
+	</nav>
+	<button class="switcher" >
+		<svg width="25" height="25" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M23 20H1" stroke="#BFBFBF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+			<path d="M21 16H23" stroke="#BFBFBF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			<path d="M1 16H3" stroke="#BFBFBF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			<path d="M17 16C17 14.6739 16.4732 13.4021 15.5355 12.4645C14.5979 11.5268 13.3261 11 12 11C10.6739 11 9.40215 11.5268 8.46447 12.4645C7.52678 13.4021 7 14.6739 7 16" stroke="#BFBFBF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			<path d="M18.36 9.64L19.78 8.22" stroke="#BFBFBF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			<path d="M4.22 8.22L5.64 9.64" stroke="#BFBFBF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			<path d="M12 5V7" stroke="#BFBFBF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+		</svg>
+	</button>
+</div> 

@@ -1,0 +1,60 @@
+:root {
+	--global-page-width: 700px;
+
+	--switcher-path-stroke-hover: hsl(40, 100%, 48%);
+	
+	--bg-color: hsl(0, 0%, 100%);
+	--fg-color: hsl(0, 0%, 0%);
+
+	--button-border-color: hsl(0, 0%, 95%);
+	--button-fg: hsl(0, 0%, 65%);
+	--button-fg-hover: hsl(0, 0%, 0%);
+
+	--button-selected-fg: hsl(0, 0%, 0%);
+	--button-selected-bg: hsl(0, 0%, 96%);
+
+	--post-border-color: hsl(0, 0%, 92%);
+	--post-header-color: hsl(0, 0%, 15%);
+	--post-header-hover-color: hsl(0, 0%, 5%);
+	--post-paragraph: hsl(0, 0%, 15%);
+	--post-date: hsl(0, 0%, 45%);
+
+	--blockquote-bg: hsl(49, 100%, 88%);
+	--blockquote-fg: hsl(0, 0%, 10%);
+
+	--switcher-path-stroke: hsl(0, 0%, 65%);
+
+	.dark {
+		--switcher-path-stroke-hover: hsl(40, 100%, 50%);
+
+		--bg-color: hsl(0, 0%, 5%);
+		--fg-color: hsl(0, 0%, 100%);
+
+		--button-border-color: hsl(0, 0%, 14%);
+		--button-fg: hsl(0, 0%, 45%);
+		--button-fg-hover: hsl(0, 0%, 100%);
+
+		--button-selected-fg: hsl(0, 0%, 100%);
+		--button-selected-bg: hsl(0, 0%, 12%);
+
+		--post-border-color: hsl(0, 0%, 10%);
+		--post-header-color: hsl(0, 0%, 80%);
+		--post-header-hover-color: hsl(0, 0%, 100%);
+		--post-paragraph: hsl(0, 0%, 80%);
+		--post-date: hsl(0, 0%, 50%);
+
+		--blockquote-bg: hsl(47, 20%, 9%);
+		--blockquote-fg: hsl(0, 0%, 90%);
+
+		--switcher-path-stroke: hsl(0, 0%, 35%);
+	}
+}
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+  	:root {
+		--global-page-width: 300px;
+  	}
+}

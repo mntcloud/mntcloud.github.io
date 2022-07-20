@@ -1,0 +1,38 @@
+{{ define "head" }}
+	{{ $style := resources.GetMatch "styles/index.scss" | resources.ToCSS }}
+	<link rel="stylesheet" type="text/css" href="{{ $style.RelPermalink }}">
+{{ end }}
+
+{{ define "main" }}
+	<main id="index">
+		<div class="posts">
+			{{ range where .Site.RegularPages "Section" "pub" }}
+				{{ $current := . }}
+				{{ with .Resources.GetMatch "thumbnail.*" }}
+					{{ $image := (.).Resize "x1000" }}
+					<div class="post thumbnail">
+						<div class="entry">
+							<h3><a href="{{ $current.RelPermalink }}">{{ $current.Title }}</a></h3>	
+							<p>
+								{{ $current.Summary }}
+								<span> {{ $current.Date | time.Format "02 January, 2006" }}</span>
+							</p>
+						</div>
+						<div class="overlay"></div>
+						<img src="{{ $image.RelPermalink }}" />
+					</div>
+				{{ else }}
+					<div class="post">
+						<div class="entry">
+							<h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>	
+							<p>
+								{{ .Summary }}
+								<span> {{ .Date | time.Format "02 January, 2006" }}</span>
+							</p>
+						</div>
+					</div>		
+				{{ end }}
+			{{ end }}
+		</div>
+	</main>
+{{ end }}

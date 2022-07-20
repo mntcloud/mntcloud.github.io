@@ -1,0 +1,24 @@
+<html>
+    <head>
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<title>{{ .Site.Title }}</title>
+    	{{ $inter := resources.GetMatch "styles/foundation/fonts/inter.scss" | resources.ToCSS }}
+    	<link rel="stylesheet" type="text/css" href="{{ $inter.RelPermalink }}">
+    	{{ $iosevka := resources.GetMatch "styles/foundation/fonts/iosevka.scss" | resources.ToCSS }}
+    	<link rel="stylesheet" type="text/css" href="{{ $iosevka.RelPermalink }}">
+    	{{ $style := resources.GetMatch "styles/main.scss" | resources.ToCSS }}
+    	<link rel="stylesheet" type="text/css" href="{{ $style.RelPermalink }}">
+    	{{ block "head" . }}
+    	    <!-- custom styling for a page -->
+    	{{ end }}
+    </head>
+    <body>
+    	{{ $script := resources.GetMatch "scripts/set_theme.ts" | js.Build }}
+    	<script type="text/javascript" src="{{ $script.RelPermalink }}"></script>
+    	
+    	{{ partial "nav.html" . }}
+		{{ block "main" . }}
+		{{ end }}
+	</body>
+</html>

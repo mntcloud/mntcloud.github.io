@@ -1,0 +1,101 @@
+@import 'foundation/variables';
+
+html {
+	width: 100%;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	body {
+		border: unset;
+		font-family: 'Inter';
+		width: 100%;
+
+		display: flex;
+		flex-direction: column;
+		align-items:center;
+
+		margin: unset;
+
+		background-color: var(--bg-color);
+		color: var(--fg-color);
+	}
+}
+
+#bar {
+	display: flex;
+	width: var(--global-page-width);
+	margin-top: 40px;
+	justify-content: space-between;
+
+	nav {
+		display: flex;
+		align-items: center;
+
+		div {
+			display: flex;
+			align-items: center;
+
+			border: 1px solid var(--button-border-color);
+			border-radius: 8px;
+
+			padding: 7px 16px 7px 16px;
+			font-weight: 500;
+			color: var(--button-fg);
+
+			font-size: 0.94em;
+
+			&:first-child {
+				margin-right: 20px;
+			}
+
+			transition: 0.3s color ease-in-out;
+
+			a {
+				text-decoration: unset;
+				color: unset;
+			}
+
+			&:hover {
+				color: var(--button-fg-hover);
+			}
+		}
+
+		.selected {
+			font-weight: 600;
+
+			color: var(--button-selected-fg);
+			background-color: var(--button-selected-bg);
+
+			border-radius: 8px;	
+
+			svg {
+				margin-top: 2px;
+				margin-right: 7px;
+				fill: var(--button-selected-fg);
+			}
+		}
+	}
+
+	.switcher {
+		height: 35px;
+		border: unset;
+		outline: 1.8px solid var(--button-border-color);
+		border-radius: 8px;
+		padding: 1px 12px 1px 12px;
+		background-color: unset;
+
+		svg {
+			path {
+				stroke: hsl(0, 0%, 65%);
+				transition: stroke 0.3s ease-in-out;	
+			}
+
+			&:hover {
+				path {
+					stroke: var(--switcher-path-stroke-hover);
+				}
+			}
+		}	
+	}
+}

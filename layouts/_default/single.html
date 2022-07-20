@@ -1,0 +1,10 @@
+{{ define "head" }}
+	{{ $style := resources.GetMatch "styles/about.scss" | resources.ToCSS }}
+	<link rel="stylesheet" type="text/css" href="{{ $style.RelPermalink }}">
+{{ end }}
+
+{{ define "main" }}
+	<main id="about">
+		{{ .Content }}	
+	</main>
+{{ end }}

@@ -1,0 +1,16 @@
+{{ define "head" }}
+	{{ $style := resources.GetMatch "styles/post.scss" | resources.ToCSS }}
+	<link rel="stylesheet" type="text/css" href="{{ $style.RelPermalink }}">
+{{ end }}
+
+{{ define "main" }}
+	<main id="post">
+		<article>
+			<header>
+				<span class="date">{{ .Date | time.Format "02 January, 2006" }}</span>
+				<h1>{{ .Title }}</h1>
+			</header>
+			{{ .Content }}
+		</article>	
+	</main>
+{{ end }}
