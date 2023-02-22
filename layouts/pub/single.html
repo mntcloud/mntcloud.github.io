@@ -6,6 +6,9 @@
 {{ define "main" }}
 	<main id="post">
 		<article>
+			{{ with .Resources.GetMatch "thumbnail.*" }}
+				<img class="hero-image" src="{{ .RelPermalink }}" >
+			{{ end }}
 			<header>
 				<span class="date">{{ .Date | time.Format "02 January, 2006" }}</span>
 				<h1>{{ .Title }}</h1>
