@@ -2,6 +2,7 @@ title = 'mntcloud'
 baseURL = 'https://mntcloud.work/'
 defaultContentLanguage = 'ru'
 summaryLength = 25
+enableEmoji = true
 
 [markup]
   [markup.highlight]
